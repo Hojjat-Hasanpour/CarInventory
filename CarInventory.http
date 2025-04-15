@@ -1,0 +1,37 @@
+﻿@CarInventory_HostAddress = https://localhost:7020
+
+GET {{CarInventory_HostAddress}}/cars
+
+###
+
+POST {{CarInventory_HostAddress}}/cars
+Content-Type: application/json
+{
+  "make": "Tesla",
+  "model": "Model X",
+  "isAvailable": true,
+  "secret": "This is test from Tesla"
+}
+###
+
+@id = 4
+GET {{CarInventory_HostAddress}}/cars/{{id}}
+
+###
+
+DELETE {{CarInventory_HostAddress}}/cars/{{id}}
+
+###
+
+PUT {{CarInventory_HostAddress}}/cars/{{id}}
+Content-Type: application/json
+{
+  "make": "ToyotaRename4",
+  "model": "Camry",
+  "isAvailable": false
+}
+###
+
+GET {{CarInventory_HostAddress}}/cars/available
+
+###
